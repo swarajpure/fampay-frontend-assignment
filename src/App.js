@@ -4,6 +4,7 @@ import ShowBigDisplayCards from './components/BigDisplayCards/ShowBigDisplayCard
 import ShowSmallCardsArrow from './components/SmallCardsArrow/ShowSmallCardsArrow';
 import ShowImageCards from './components/ImageCards/ShowImageCards';
 import ShowDynamicWidthCards from './components/DynamicWidthCards/ShowDynamicWidthCards';
+import ShowSmallCardsNoArrow from './components/SmallCardsNoArrow/ShowSmallCardsNoArrow';
 import filterFetchedData from './utils/filterFetchedData';
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
   const [smallCardsArrow, setSmallCardsArrow] = useState();
   const [imageCards, setImageCards] = useState();
   const [dynamicWidthCards, setDynamicWidthCards] = useState();
+  const [smallCardsNoArrow, setSmallCardsNoArrow] = useState();
 
   useEffect(() => {
     filterFetchedData().then((data) => {
@@ -18,6 +20,7 @@ const App = () => {
       setSmallCardsArrow(data.smallCardsArrow);
       setImageCards(data.imgCards);
       setDynamicWidthCards(data.dynamicWidthCards);
+      setSmallCardsNoArrow(data.smallCardsNoArrow);
     });
   }, []);
 
@@ -27,6 +30,7 @@ const App = () => {
       <ShowSmallCardsArrow cardsData={smallCardsArrow} />
       <ShowImageCards cardsData={imageCards} />
       <ShowDynamicWidthCards cardsData={dynamicWidthCards} />
+      <ShowSmallCardsNoArrow cardsData={smallCardsNoArrow} />
     </div>
   );
 };

@@ -8,7 +8,6 @@ const ShowSmallCardsArrow = ({ cardsData }) => {
   useEffect(() => {
     setCards(cardsData?.[0].cards);
   }, [cardsData]);
-  console.log('cards', cardsData);
 
   return (
     <div>
@@ -41,7 +40,7 @@ const ShowSmallCardsArrow = ({ cardsData }) => {
 };
 
 ShowSmallCardsArrow.propTypes = {
-  cardsData: PropTypes.object.isRequired,
+  cardsData: PropTypes.array.isRequired,
 };
 
 export default ShowSmallCardsArrow;

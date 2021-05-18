@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import './SmallCardsArrow.css';
 
 const SmallCardsArrow = (props) => {
-  console.log(props);
   const {
     title,
     formattedTitle: { text: formattedTitle },
@@ -26,6 +25,17 @@ const SmallCardsArrow = (props) => {
       </h3>
     </div>
   );
+};
+
+SmallCardsArrow.propTypes = {
+  title: PropTypes.string.isRequired,
+  formattedTitle: PropTypes.shape({
+    text: PropTypes.string,
+  }).isRequired,
+  icon: PropTypes.shape({
+    image_url: PropTypes.string,
+  }).isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default SmallCardsArrow;

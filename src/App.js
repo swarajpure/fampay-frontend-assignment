@@ -5,7 +5,7 @@ import ShowSmallCardsArrow from './components/SmallCardsArrow/ShowSmallCardsArro
 import ShowImageCards from './components/ImageCards/ShowImageCards';
 import filterFetchedData from './utils/filterFetchedData';
 
-function App() {
+const App = () => {
   const [bigDisplayCards, setBigDisplayCards] = useState();
   const [smallCardsArrow, setSmallCardsArrow] = useState();
   const [imageCards, setImageCards] = useState();
@@ -20,12 +20,11 @@ function App() {
 
   return (
     <div className="main-container">
-      <p>Content goes here</p>
       <ShowBigDisplayCards cardsData={bigDisplayCards} />
       <ShowSmallCardsArrow cardsData={smallCardsArrow} />
       <ShowImageCards cardsData={imageCards} />
     </div>
   );
-}
+};
 
 export default App;

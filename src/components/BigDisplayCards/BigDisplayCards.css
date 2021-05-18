@@ -1,0 +1,10 @@
+.big-display-card {
+  margin: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(69,74,166,0.9);
+}
+
+.big-display-card__btn {
+  cursor: pointer;
+}

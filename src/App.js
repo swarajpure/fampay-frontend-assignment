@@ -1,29 +1,30 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import ShowBigDisplayCards from './components/BigDisplayCards/ShowBigDisplayCards';
+import ShowSmallCardsArrow from './components/SmallCardsArrow/ShowSmallCardsArrow';
+import ShowImageCards from './components/ImageCards/ShowImageCards';
+import filterFetchedData from './utils/filterFetchedData';
 
-function App() {
+const App = () => {
+  const [bigDisplayCards, setBigDisplayCards] = useState();
+  const [smallCardsArrow, setSmallCardsArrow] = useState();
+  const [imageCards, setImageCards] = useState();
+
+  useEffect(() => {
+    filterFetchedData().then((data) => {
+      setBigDisplayCards(data.bigDisplayCards);
+      setSmallCardsArrow(data.smallCardsArrow);
+      setImageCards(data.imgCards);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+      <ShowBigDisplayCards cardsData={bigDisplayCards} />
+      <ShowSmallCardsArrow cardsData={smallCardsArrow} />
+      <ShowImageCards cardsData={imageCards} />
     </div>
   );
-}
+};
 
 export default App;

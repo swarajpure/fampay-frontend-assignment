@@ -19,8 +19,15 @@
 
 .small-card-no-arrow__title {
   padding: 0 10px;
+  font-size: 0.75rem;
 }
 
 .small-card-no-arrow__img {
   padding-left: 10px;
+  height: 10px;
+}
+
+.non-scrollable {
+  width: 43vw;
+  margin-right: 3%;
 }

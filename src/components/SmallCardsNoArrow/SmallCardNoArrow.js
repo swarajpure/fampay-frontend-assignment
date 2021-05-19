@@ -5,12 +5,14 @@ const SmallCardNoArrow = (props) => {
   const { title, imageUrl, isScrollable } = props;
 
   return (
-    <div
-      className="small-card-no-arrow"
-      style={{ width: isScrollable ? '80%' : '50%' }}
-    >
-      <img className="small-card-no-arrow__img" src={imageUrl} alt={title} style={{ height: '36px' }} />
-      <p className="small-card-no-arrow__title">{title}</p>
+    <div className={(isScrollable) ? '' : 'non-scrollable'}>
+      <div
+        className="small-card-no-arrow"
+        style={{ width: isScrollable ? '70vw' : '100%' }}
+      >
+        <img className="small-card-no-arrow__img" src={imageUrl} alt={title} style={{ height: '24px' }} />
+        <p className="small-card-no-arrow__title">{title}</p>
+      </div>
     </div>
   );
 };
